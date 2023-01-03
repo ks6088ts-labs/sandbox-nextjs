@@ -1,9 +1,9 @@
-import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+import { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 
-const envSample: NextPage = (props) => {
-  console.log(`process.env.TEST`, process.env.TEST);
-  console.log(`process.env.NEXT_PUBLIC_TEST`, process.env.NEXT_PUBLIC_TEST);
+const envSample: NextPage = () => {
+  console.log(`process.env.TEST`, process.env.TEST)
+  console.log(`process.env.NEXT_PUBLIC_TEST`, process.env.NEXT_PUBLIC_TEST)
   return (
     <div>
       <Head>
@@ -16,13 +16,13 @@ const envSample: NextPage = (props) => {
         {/* <p>{process.env.TEST}</p> */}
       </main>
     </div>
-  );
-};
+  )
+}
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
-  };
-};
+  }
+}
 
-export default envSample;
+export default envSample

@@ -1,17 +1,17 @@
-import { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import { NextPage, GetStaticProps } from 'next'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 type ISRProps = {
-  message: string;
-};
+  message: string
+}
 
 const ISR: NextPage<ISRProps> = (props) => {
-  const { message } = props;
-  const router = useRouter();
+  const { message } = props
+  const router = useRouter()
 
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
   return (
     <div>
@@ -24,19 +24,19 @@ const ISR: NextPage<ISRProps> = (props) => {
         <p>{message}</p>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export const getStaticProps: GetStaticProps<ISRProps> = async (context) => {
-  const timestamp = new Date().toLocaleString();
-  const message = `run getStaticProps at ${timestamp}`;
-  console.log(message);
+export const getStaticProps: GetStaticProps<ISRProps> = async () => {
+  const timestamp = new Date().toLocaleString()
+  const message = `run getStaticProps at ${timestamp}`
+  console.log(message)
   return {
     props: {
       message,
     },
     revalidate: 10,
-  };
-};
+  }
+}
 
-export default ISR;
+export default ISR
