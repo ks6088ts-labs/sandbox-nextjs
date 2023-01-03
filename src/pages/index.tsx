@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../../styles/Home.module.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,11 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
+          <Link href="/ssg">Go to SSG</Link>
+          <Link href="/posts/1">Go to SSG `/posts/1`</Link>
+          <Link href="/ssr">Go to SSR</Link>
+          <Link href="/isr">Go to ISR</Link>
+
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.tsx</code>
