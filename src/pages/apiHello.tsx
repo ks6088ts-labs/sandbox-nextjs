@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 const ApiHello = () => {
-  const [data, setData] = useState({ name: "" });
+  const [data, setData] = useState({ name: '' })
   useEffect(() => {
-    fetch("api/hello")
+    fetch('api/hello')
       .then((res) => res.json())
       .then((profile) => {
-        setData(profile);
-      });
-  }, []);
-  return <div>hello {data.name}</div>;
-};
+        setData(profile)
+      })
+  }, [])
+  return <div>hello {data.name}</div>
+}
 
-export default ApiHello;
+export default ApiHello

@@ -1,12 +1,12 @@
-import { GetServerSideProps, NextPage } from "next";
-import Head from "next/head";
+import { GetServerSideProps, NextPage } from 'next'
+import Head from 'next/head'
 
 type SSRProps = {
-  message: string;
-};
+  message: string
+}
 
 const SSR: NextPage<SSRProps> = (props) => {
-  const { message } = props;
+  const { message } = props
   return (
     <div>
       <Head>
@@ -18,20 +18,20 @@ const SSR: NextPage<SSRProps> = (props) => {
         <p>{message}</p>
       </main>
     </div>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps<SSRProps> = async (
-  context
+  context,
 ) => {
-  const timestamp = new Date().toLocaleString();
-  const message = `run getStaticProps at ${timestamp}`;
-  console.log(message);
+  const timestamp = new Date().toLocaleString()
+  const message = `run getStaticProps at ${timestamp}`
+  console.log(message)
   return {
     props: {
       message,
     },
-  };
-};
+  }
+}
 
-export default SSR;
+export default SSR
