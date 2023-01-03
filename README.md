@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+```shell
+npx create-next-app@latest --typescript --eslint sandbox-nextjs
+```
+
 ## Getting Started
 
 First, run the development server:
@@ -34,3 +38,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Using Docker
+
+1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
+2. Build your container: `docker build -t sandbox-nextjs .`.
+3. Run your container: `docker run -p 3000:3000 sandbox-nextjs`.
+
+You can view your images created with `docker images`.
+
+### In existing projects
+
+To add support for Docker to an existing project, just copy the `Dockerfile` into the root of the project and add the following to the `next.config.js` file:
+
+```js
+// next.config.js
+module.exports = {
+  // ... rest of the configuration.
+  output: 'standalone',
+}
+```
+
+This will build the project as a standalone app inside the Docker image.
