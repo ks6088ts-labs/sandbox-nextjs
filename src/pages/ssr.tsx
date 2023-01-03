@@ -21,9 +21,7 @@ const SSR: NextPage<SSRProps> = (props) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps<SSRProps> = async (
-  context,
-) => {
+export const getServerSideProps: GetServerSideProps<SSRProps> = async () => {
   const timestamp = new Date().toLocaleString()
   const message = `run getStaticProps at ${timestamp}`
   console.log(message)

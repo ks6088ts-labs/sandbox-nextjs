@@ -21,7 +21,7 @@ const SSG: NextPage<SSGProps> = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<SSGProps> = async (context) => {
+export const getStaticProps: GetStaticProps<SSGProps> = async () => {
   const timestamp = new Date().toLocaleString()
   const message = `run getStaticProps at ${timestamp}`
   console.log(message)

@@ -27,7 +27,7 @@ const ISR: NextPage<ISRProps> = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<ISRProps> = async (context) => {
+export const getStaticProps: GetStaticProps<ISRProps> = async () => {
   const timestamp = new Date().toLocaleString()
   const message = `run getStaticProps at ${timestamp}`
   console.log(message)

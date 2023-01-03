@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 
-const envSample: NextPage = (props) => {
+const envSample: NextPage = () => {
   console.log(`process.env.TEST`, process.env.TEST)
   console.log(`process.env.NEXT_PUBLIC_TEST`, process.env.NEXT_PUBLIC_TEST)
   return (
@@ -19,7 +19,7 @@ const envSample: NextPage = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
   }
